@@ -28,10 +28,6 @@ tool.lineWidth = penWidth;
 let mousedown = false;
 canvas.addEventListener("mousedown", (e) => {
   mousedown = true;
-  // beginpath({
-  //     x: e.clientX,
-  //     y: e.clientY
-  // })
   let data = {
     x: e.clientX,
     y: e.clientY,
@@ -50,6 +46,7 @@ canvas.addEventListener("mousemove", (e) => {
     socket.emit("drawstroke", data);
   }
 });
+
 canvas.addEventListener("mouseup", (e) => {
   mousedown = false;
 
@@ -69,7 +66,6 @@ undo.addEventListener("click", (e) => {
 
 redo.addEventListener("click", (e) => {
   if (track < undoredotracker.length - 1) track++;
-
   let data = {
     trackValue: track,
     undoredotracker
