@@ -62,7 +62,7 @@ undo.addEventListener("click", (e) => {
   if (track > 0) track--;
   let data = {
     trackValue: track,
-    undoredotracker,
+    undoredotracker
   };
   socket.emit("undoredo", data);
 });
@@ -72,7 +72,7 @@ redo.addEventListener("click", (e) => {
 
   let data = {
     trackValue: track,
-    undoredotracker,
+    undoredotracker
   };
   socket.emit("undoredo", data);
 });
